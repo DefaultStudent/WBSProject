@@ -30,6 +30,8 @@
             <prop key="show_sql">
                 true
             </prop>
+            <prop key="hibernate.connection.url">jdbc:mysql://39.106.141.230:3306/WBS</prop>
+            <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
 
         </props>
 
@@ -37,8 +39,14 @@
     <property name="annotatedClasses">
         <list>
             <value>com.wbs.customer.vo.Customer</value>
+            <value>com.wbs.bookinfo.vo.BookInfo</value>
         </list>
     </property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:com/wbs/bookinfo/vo/BookInfo.hbm.xml</value>
+            </list>
+        </property>
     </bean>
 
 </beans>

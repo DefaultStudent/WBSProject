@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.wbs.bookinfo.vo.BookInfo" table="BookInfo" schema="WBS">
+        <property name="bookname" column="bookname"/>
+        <property name="booktypename" column="booktypename"/>
+        <property name="isbn" column="isbn"/>
+        <property name="bookprice" column="bookprice"/>
+        <property name="pubname" column="pubname"/>
+        <property name="pubdate" column="pubdate"/>
+        <property name="author" column="author"/>
+        <property name="introduce" column="introduce"/>
+    </class>
+</hibernate-mapping>
