@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 引入外部的属性文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver">
+        </property>
+        <property name="url" value="jdbc:mysql://39.106.141.230:3306/bookshop">
+        </property>
+        <property name="username" value="root"></property>
+        <property name="password" value="mysql2008"></property>
+
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"><!--class=" org.springframework.orm.hibernate3.LocalSessionFactoryBean"-->
+    <property name="dataSource">
+        <ref bean="dataSource" />
+    </property>
+    <property name="hibernateProperties">
+        <props>
+            <prop key="hibernate.dialect">
+                org.hibernate.dialect.MySQLInnoDBDialect
+            </prop>
+            <prop key="show_sql">
+                true
+            </prop>
+
+        </props>
+
+    </property>
+    <property name="annotatedClasses">
+        <list>
+            <value>com.dhee.vo.BooksVo</value>
+            <value>com.dhee.vo.EmpVo</value>
+            <value>com.dhee.vo.UsersVo</value>
+        </list>
+    </property>
+    </bean>
 
 </beans>
