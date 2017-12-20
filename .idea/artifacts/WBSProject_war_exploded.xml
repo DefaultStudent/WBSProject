@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="WBSProject" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Struts 2-2.5.14.1" />
+          <element id="library" level="project" name="Spring-4.3.13.RELEASE" />
+          <element id="library" level="project" name="Hibernate 4.0.1-4.1.1" />
+        </element>
+        <element id="library" level="project" name="Struts 2-2.5.14.1" />
       </element>
       <element id="library" level="project" name="Spring-4.3.13.RELEASE" />
     </root>

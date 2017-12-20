@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.wbs.customer.vo.Customers" table="Customers">
+        <id name="cusId" column="cus_id"/>
+        <property name="cusAlias" column="cus_alias"/>
+        <property name="cusPwd" column="cus_pwd"/>
+        <property name="cusName" column="cus_name"/>
+        <property name="cusTel" column="cus_tel"/>
+        <property name="cusGender" column="cus_gender"/>
+        <property name="cusBirth" column="cus_birth"/>
+        <property name="cusAddress" column="cus_address"/>
+        <property name="ulimit" column="ulimit"/>
+    </class>
+</hibernate-mapping>

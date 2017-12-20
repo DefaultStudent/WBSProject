@@ -1,10 +1,13 @@
 package com.wbs.customer.dao;
 
-import com.wbs.customer.vo.Customer;
+import com.wbs.customer.vo.Customers;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,15 +28,15 @@ public class CustomerDao {
         return sessionFactory.getCurrentSession();
     }
 
-    public Customer login(Customer customer){
-        String sql = "from Customer";
+    public List<Customers> login(Customers customer){
+
+        String sql = "from Customers";
         Query query = getSession().createQuery(sql);
-        List<Customer> list = query.list();
-        for (Customer customer1 : list){
-            if (customer1.getCusId().equals(customer.getCusId()) && customer1.getCusPwd().equals(customer.getCusPwd())){
-                return customer1;
-            }
+        List<Customers> list = query.list();
+        System.out.printf("Customers list size"+list.size());
+        for (Customers cus : list){
+            System.out.println(cus.getCusId());
         }
-        return null;
+        return list;
     }
 }
