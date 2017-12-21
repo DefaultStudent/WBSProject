@@ -43,7 +43,7 @@
             <value>com/wbs/customer/vo/Customers.hbm.xml</value>
             <value>com/wbs/bookinfo/vo/BookInfo.hbm.xml</value>
             <value>com/wbs/booktype/vo/BookType.hbm.xml</value>
-            <value>com/wbs/Shopping/vo/Shopping.hbm.xml</value>
+            <value>com/wbs/shopping/vo/Shopping.hbm.xml</value>
         </list>
     </property>
     </bean>

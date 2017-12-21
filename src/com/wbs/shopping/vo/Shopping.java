@@ -1,8 +1,12 @@
-package com.wbs.Shopping.vo;
+package com.wbs.shopping.vo;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * @author duke
+ * @version 2017-12-21
+ */
 public class Shopping {
     private String sBookname;
     private BigDecimal sBookprice;
