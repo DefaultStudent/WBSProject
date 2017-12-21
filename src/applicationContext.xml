@@ -44,15 +44,26 @@
     </bean>
 
     <!-- 事务管理器 -->
-    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <!-- 注解事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!-- 用户操作 -->
+    <bean id="customerAction" class="com.wbs.customer.action.CustomerAction">
+        <property name="customerService" ref="customerService"/>
     </bean>
 
+    <!-- Dao配置 -->
     <bean id="customerDao" class="com.wbs.customer.dao.CustomerDao">
         <property name="sessionFactory" ref="sessionFactory">
         </property>
     </bean>
-    <bean id="login" class="com.wbs.customer.action.CustomerAction">
+
+    <!-- Service配置 -->
+    <bean id="customerService" class="com.wbs.customer.service.CustomerService">
         <property name="customerDao" ref="customerDao"/>
     </bean>
 

@@ -3,6 +3,7 @@ package com.wbs.customer.action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.wbs.customer.dao.CustomerDao;
+import com.wbs.customer.service.CustomerService;
 import com.wbs.customer.vo.Customers;
 
 import java.util.List;
@@ -16,7 +17,11 @@ import java.util.Map;
 public class CustomerAction extends ActionSupport implements ModelDriven<Customers>{
 
     Customers customer = new Customers();
-    private CustomerDao customerDao;
+    private CustomerService customerService;
+
+    public void setCustomerService(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     /**
      * 模型驱动
@@ -27,21 +32,22 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
         return customer;
     }
 
-
-    public CustomerDao getCustomerDao() {
-        return customerDao;
-    }
-
-    public void setCustomerDao(CustomerDao customerDao) {
-        this.customerDao = customerDao;
-    }
-
+    /**
+     * 登陆功能
+     * @return
+     * @throws Exception
+     */
     public String login() throws Exception {
-        Customers cus = customerDao.login(getModel());
+        Customers cus = customerService.login(customer);
         if (cus == null){
             return INPUT;
         } else {
             return SUCCESS;
         }
+    }
+
+    public String register() throws Exception {
+        customerService.register(customer);
+        return SUCCESS;
     }
 }

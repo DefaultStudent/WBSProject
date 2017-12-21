@@ -3,10 +3,8 @@ package com.wbs.bookinfo.vo;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Objects;
-
 
 public class BookInfo {
     private String bookname;
@@ -18,8 +16,6 @@ public class BookInfo {
     private String author;
     private String introduce;
 
-    @Basic
-    @Column(name = "bookname")
     public String getBookname() {
         return bookname;
     }
@@ -28,8 +24,6 @@ public class BookInfo {
         this.bookname = bookname;
     }
 
-    @Basic
-    @Column(name = "booktypename")
     public String getBooktypename() {
         return booktypename;
     }
@@ -38,8 +32,6 @@ public class BookInfo {
         this.booktypename = booktypename;
     }
 
-    @Id
-    @Column(name = "isbn")
     public String getIsbn() {
         return isbn;
     }
@@ -48,8 +40,6 @@ public class BookInfo {
         this.isbn = isbn;
     }
 
-    @Basic
-    @Column(name = "bookprice")
     public BigDecimal getBookprice() {
         return bookprice;
     }
@@ -58,8 +48,6 @@ public class BookInfo {
         this.bookprice = bookprice;
     }
 
-    @Basic
-    @Column(name = "pubname")
     public String getPubname() {
         return pubname;
     }
@@ -68,8 +56,6 @@ public class BookInfo {
         this.pubname = pubname;
     }
 
-    @Basic
-    @Column(name = "pubdate")
     public String getPubdate() {
         return pubdate;
     }
@@ -78,8 +64,6 @@ public class BookInfo {
         this.pubdate = pubdate;
     }
 
-    @Basic
-    @Column(name = "author")
     public String getAuthor() {
         return author;
     }
@@ -88,8 +72,6 @@ public class BookInfo {
         this.author = author;
     }
 
-    @Basic
-    @Column(name = "introduce")
     public String getIntroduce() {
         return introduce;
     }
