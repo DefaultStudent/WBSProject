@@ -17,10 +17,9 @@ public class BookTypeService {
     }
 
     /**
-     *@return
+     * @return
      */
     public List<BookType> selectAll(){
         return bookTypeDao.selectAll();
     }
-
 }
