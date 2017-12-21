@@ -30,7 +30,6 @@ public class CustomerDao extends HibernateDaoSupport{
 
         String sql = "from Customers where cusId = ? and cusPwd = ?";
         List<Customers> list = (List<Customers>) this.getHibernateTemplate().find(sql, customers.getCusId(), customers.getCusPwd());
-        System.out.print(list.size());
         if (list != null && list.size() > 0) {
             return list.get(0);
         } else {
