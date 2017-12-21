@@ -39,6 +39,7 @@
         <property name="mappingResources">
         <list>
             <value>com/wbs/customer/vo/Customers.hbm.xml</value>
+            <value>com/wbs/bookinfo/vo/BookInfo.hbm.xml</value>
         </list>
     </property>
     </bean>
