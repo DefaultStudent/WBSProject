@@ -1,6 +1,8 @@
 package com.wbs.customer.dao;
 
+import com.wbs.customer.action.CustomerAction;
 import com.wbs.customer.vo.Customers;
+import org.hibernate.FlushMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,10 +21,15 @@ import java.util.List;
 
 public class CustomerDao extends HibernateDaoSupport{
 
-    public Customers login(Customers customer){
+    /**
+     * 用户登陆功能
+     * @param customers
+     * @return list
+     */
+    public Customers login(Customers customers){
 
         String sql = "from Customers where cusId = ? and cusPwd = ?";
-        List<Customers> list = (List<Customers>) this.getHibernateTemplate().find(sql, customer.getCusId(), customer.getCusPwd());
+        List<Customers> list = (List<Customers>) this.getHibernateTemplate().find(sql, customers.getCusId(), customers.getCusPwd());
         System.out.print(list.size());
         if (list != null && list.size() > 0) {
             return list.get(0);
@@ -30,5 +37,16 @@ public class CustomerDao extends HibernateDaoSupport{
             return null;
         }
 
+    }
+
+    /**
+     * 用户注册功能
+     * @param customers
+     * @return true
+     */
+    @Transactional(value = "transactionManager", rollbackFor = Exception.class)
+    public void register(Customers customers){
+        System.out.printf(customers.getCusId());
+        this.getHibernateTemplate().save(customers);
     }
 }
