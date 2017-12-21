@@ -14,5 +14,8 @@
         <action name="register" class="com.wbs.customer.action.CustomerAction" method="register">
             <result>/table.jsp</result>
         </action>
+        <action name="booktype" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
+            <result>/table.jsp</result>
+        </action>
     </package>
 </struts>
