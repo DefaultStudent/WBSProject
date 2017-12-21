@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -136,30 +137,16 @@
 									</tr>
 								  </thead>
 								  <tbody>
-                                    <tr>
-                                          <td>1</td>
-                                          <td>javascript实战</td>
-                                          <td>技术书籍</td>
-                                          <td>66.5</td>
-                                          <td>机械工业出版社</td>
-                                        <td><a href="#">查看</a> </td>
-									</tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>javascript实战</td>
-                                        <td>技术书籍</td>
-                                        <td>66.5</td>
-                                        <td>机械工业出版社</td>
-                                        <td><a href="#">查看</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>javascript实战</td>
-                                        <td>技术书籍</td>
-                                        <td>66.5</td>
-                                        <td>机械工业出版社</td>
-                                        <td><a href="#">查看</a> </td>
-                                    </tr>
+								  	<s:iterator var="books" value="#session.bookinfo">
+                                    	<tr>
+                                          	<td><s:property value="#books.bookname"/> </td>
+                                          	<td><s:property value="#books.bookprice"/></td>
+                                          	<td><s:property value="#books.author"/></td>
+                                          	<td><s:property value="#books.booktypename"/></td>
+                                          	<td><s:property value="#books.pubname"/></td>
+                                        	<td><a href="#">添加购物车</a> </td>
+										</tr>
+								  	</s:iterator>
 								  </tbody>
 								</table>
 								<br />

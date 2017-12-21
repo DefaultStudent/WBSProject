@@ -18,5 +18,8 @@
             <result>/table.jsp</result>
             <result name="error">/404.html</result>
         </action>
+        <action name="queryAllBookType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
+            <result>/table.jsp</result>
+        </action>
     </package>
 </struts>
