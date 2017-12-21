@@ -14,6 +14,7 @@
       <root url="jar://$USER_HOME$/Downloads/c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar!/" />
     </CLASSES>
+    <JAVADOC />
     <SOURCES />
   </library>
 </component>
