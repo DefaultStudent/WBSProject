@@ -38,9 +38,9 @@
                         <input class="input" id="cus_gender2" type="radio" name="cusGender" value="女" checked="checked">女<br/>
                         <div class="hint">请选择性别</div>
                     </div>
-                    <input class="input" id="cus_pwd" name="cusPwd" type="text"aria-label="密码" placeholder="密码"/><br/>
+                    <input class="input" id="cus_pwd" name="cusPwd" type="password"aria-label="密码" placeholder="密码"/><br/>
                     <div class="hint">请填写符合格式的密码</div>
-                    <input class="input" id="cus_pwd1" type="text" aria-label="重复密码" placeholder="重复密码"/><br/>
+                    <input class="input" id="cus_pwd1" type="password" aria-label="重复密码" placeholder="重复密码"/><br/>
                     <div class="hint">请再次输入密码</div>
                     <input class="input" id="cus_tel" name="cusTel" type="text" aria-label="手机号" placeholder="手机号"/><br/>
                     <div class="hint">请填写手机号</div>
