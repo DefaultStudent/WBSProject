@@ -58,7 +58,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="trolley.html">
+								<a href="register.jsp">
 									<i class="menu-icon icon-inbox"></i>
 									购物车
 								</a>
