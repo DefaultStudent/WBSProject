@@ -6,6 +6,7 @@
 
 <struts>
     <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
     <package name="wbs" extends="struts-default">
         <action name="login" class="com.wbs.customer.action.CustomerAction" method="login">
             <result type="chain">findAllBook2</result>
@@ -25,6 +26,10 @@
         </action>
         <action name="queryAllBookType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
             <result>/table.jsp</result>
+        </action>
+
+        <action name="addCar" class="com.wbs.shopping.action.ShoppingAction" method="addCar">
+            <result type="redirectAction">findAllBook2</result>
         </action>
     </package>
 </struts>

@@ -29,28 +29,6 @@ public class BookInfoAction extends ActionSupport implements ModelDriven<BookInf
     private List<BookInfo> list;
     private Map<String,Object> session;
 
-    public void setSession(Map<String, Object> session) {
-
-        this.session = session;
-    }
-
-
-    public List<BookInfo> getList() {
-        return list;
-    }
-
-    public void setList(List<BookInfo> list) {
-        this.list = list;
-    }
-public class BookInfoAction extends ActionSupport implements ModelDriven<BookInfo>, SessionAware{
-    private BookInfo bookInfo = new BookInfo();
-    private BookInfoService bookInfoService;
-    private Map<String, Object> session;
-
-    public Map<String, Object> getSession() {
-        return session;
-    }
-
     @Override
     public void setSession(Map<String, Object> session) {
         this.session = session;
@@ -68,8 +46,8 @@ public class BookInfoAction extends ActionSupport implements ModelDriven<BookInf
     public String findAllBook() throws Exception{
          list = bookInfoService.findAllBookInfo();
          session.put("bookinfo",list);
-        List<BookInfo> list = bookInfoService.findAllBookInfo();
-        session.put("bookinfo", list);
-        return SUCCESS;
+         List<BookInfo> list = bookInfoService.findAllBookInfo();
+         session.put("bookinfo", list);
+         return SUCCESS;
     }
 }
