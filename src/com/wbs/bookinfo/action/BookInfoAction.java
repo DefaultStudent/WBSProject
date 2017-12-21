@@ -4,6 +4,12 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.wbs.bookinfo.service.BookInfoService;
 import com.wbs.bookinfo.vo.BookInfo;
+import org.apache.struts2.ServletActionContext;
+import org.springframework.mock.web.MockHttpServletRequest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author Simon
@@ -24,7 +30,13 @@ public class BookInfoAction extends ActionSupport implements ModelDriven<BookInf
     }
 
     public String findAllBook() throws Exception{
-        bookInfoService.findAllBookInfo();
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession httpSession = request.getSession();
+        List<BookInfo> list = bookInfoService.findAllBookInfo();
+        for (BookInfo bookInfo1 : list) {
+            httpSession.setAttribute("bookinfo", bookInfo1);
+            System.out.printf(bookInfo1.getAuthor());
+        }
         return SUCCESS;
     }
 }
