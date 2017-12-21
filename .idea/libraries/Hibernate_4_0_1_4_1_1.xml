@@ -1,6 +1,5 @@
 <component name="libraryTable">
-  <library name="Hibernate 4.0.1-4.1.1" type="hibernate">
-    <properties version="4.1.1" />
+  <library name="Hibernate 4.0.1-4.1.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hibernate-commons-annotations-4.0.1.Final.jar!/" />
@@ -15,7 +14,6 @@
       <root url="jar://$USER_HOME$/Downloads/c3p0-0.9.5.2/lib/c3p0-oracle-thin-extras-0.9.5.2.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>
