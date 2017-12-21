@@ -1,7 +1,11 @@
 package com.wbs.customer.vo;
 
-import javax.persistence.*;
 import java.util.Objects;
+
+/**
+ * @author Simon
+ * @version 1.0 2017-12-20
+ */
 
 public class Customers {
     private String cusId;

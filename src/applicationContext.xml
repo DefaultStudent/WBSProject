@@ -37,10 +37,10 @@
         </property>
         <!-- 配置Hibernate的映射文件 -->
         <property name="mappingResources">
-            <list>
-                <value>com/wbs/customer/vo/Customers.hbm.xml</value>
-            </list>
-        </property>
+        <list>
+            <value>com/wbs/customer/vo/Customers.hbm.xml</value>
+        </list>
+    </property>
     </bean>
 
     <!-- 事务管理器 -->

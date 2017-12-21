@@ -49,11 +49,11 @@
                     <input id="submit" type="submit" class="button" name="button" value="注册"/><br/>
                 </div>
             </form>
-            <form method="post" action="login">
+            <form method="post" action="login" name="form1">
                 <div class="input_signin">
-                    <input class="input" id="login_id" name="customer.cusId" type="text" aria-label="用户帐号" placeholder="你的注册邮箱"/><br/>
+                    <input class="input" id="login_id" name="cusId" type="text" aria-label="用户帐号" placeholder="你的注册邮箱"/><br/>
                     <div class="hint">请填写你的注册帐号</div>
-                    <input class="input" id="login_pwd" name="customer.cusPwd" type="password" placeholder="密码"/><br/>
+                    <input class="input" id="login_pwd" name="cusPwd" type="password" placeholder="密码"/><br/>
                     <div class="hint">请填写你的密码</div>
                     <input type="submit" id="button" class="button" value="登录">
                     <div class="forget">

@@ -1,6 +1,7 @@
 package com.wbs.customer.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import com.wbs.customer.dao.CustomerDao;
 import com.wbs.customer.vo.Customers;
 
@@ -12,23 +13,20 @@ import java.util.Map;
  * @version 1.0 2017-12-20
  */
 
-public class CustomerAction extends ActionSupport{
+public class CustomerAction extends ActionSupport implements ModelDriven<Customers>{
 
-    private Customers customer;
+    Customers customer = new Customers();
     private CustomerDao customerDao;
-    private Map<String, Object> session;
 
-    public void setSession(Map<String, Object> session) {
-        this.session = session;
-    }
-
-    public Customers getCustomers() {
+    /**
+     * 模型驱动
+     * @return customer
+     */
+    @Override
+    public Customers getModel(){
         return customer;
     }
 
-    public void setCustomers(Customers customer) {
-        this.customer = customer;
-    }
 
     public CustomerDao getCustomerDao() {
         return customerDao;
@@ -39,12 +37,11 @@ public class CustomerAction extends ActionSupport{
     }
 
     public String login() throws Exception {
-        List<Customers> customer1 = customerDao.login(customer);
-        if (customer1 == null) {
-            return ERROR;
+        Customers cus = customerDao.login(getModel());
+        if (cus == null){
+            return INPUT;
+        } else {
+            return SUCCESS;
         }
-
-        return SUCCESS;
-
     }
 }
