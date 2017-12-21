@@ -5,20 +5,32 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.wbs.bookinfo.service.BookInfoService;
 import com.wbs.bookinfo.vo.BookInfo;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.mock.web.MockHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Simon
  * @version 1.0 2017-12-21
  */
 
-public class BookInfoAction extends ActionSupport implements ModelDriven<BookInfo>{
+public class BookInfoAction extends ActionSupport implements ModelDriven<BookInfo>, SessionAware{
     private BookInfo bookInfo = new BookInfo();
     private BookInfoService bookInfoService;
+    private Map<String, Object> session;
+
+    public Map<String, Object> getSession() {
+        return session;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
 
     public void setBookInfoService(BookInfoService bookInfoService) {
         this.bookInfoService = bookInfoService;
@@ -30,13 +42,8 @@ public class BookInfoAction extends ActionSupport implements ModelDriven<BookInf
     }
 
     public String findAllBook() throws Exception{
-        HttpServletRequest request = ServletActionContext.getRequest();
-        HttpSession httpSession = request.getSession();
         List<BookInfo> list = bookInfoService.findAllBookInfo();
-        for (BookInfo bookInfo1 : list) {
-            httpSession.setAttribute("bookinfo", bookInfo1);
-            System.out.printf(bookInfo1.getAuthor());
-        }
+        session.put("bookinfo", list);
         return SUCCESS;
     }
 }

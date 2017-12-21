@@ -171,16 +171,16 @@
                                 </tr>
                                 </thead>
                                 <s:iterator var="bookinfo" value="#session.bookinfo">
-                                <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td><s:property value="#bookinfo.bookname"/></td>
-                                    <td><s:property value="#bookinfo.booktype"/></td>
-                                    <td><s:property value="#bookinfo.bookprice"/></td>
-                                    <td><s:property value="#bookinfo.pubname"/></td>
-                                    <td><a href="#">添加至购物车</a> </td>
-                                </tr>
-                                </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td><s:property value="#bookinfo.bookname"/></td>
+                                            <td><s:property value="#bookinfo.booktypename"/></td>
+                                            <td><s:property value="#bookinfo.bookprice"/></td>
+                                            <td><s:property value="#bookinfo.pubname"/></td>
+                                            <td><a href="#">添加至购物车</a> </td>
+                                        </tr>
+                                    </tbody>
                                 </s:iterator>
                             </table>
                             <br />
