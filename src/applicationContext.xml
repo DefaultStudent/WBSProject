@@ -67,7 +67,10 @@
 
     <bean id="bookTypeAction" class="com.wbs.booktype.action.BookTypeAction">
         <property name="bookTypeService" ref="bookTypeService"/>
-        <property name="bookTypeService" ref="booktypeService"/>
+    </bean>
+
+    <bean id="shoppingAction" class="com.wbs.shopping.action.ShoppingAction">
+        <property name="shoppingService" ref="shoppingService"/>
     </bean>
 
     <!-- Service配置 -->
@@ -81,9 +84,12 @@
 
     <bean id="bookTypeService" class="com.wbs.booktype.service.BookTypeService">
         <property name="bookTypeDao" ref="bookTypeDao"/>
-    <bean id="booktypeService" class="com.wbs.booktype.service.BookTypeService">
-        <property name="bookTypeDao" ref="booktypeDao"/>
     </bean>
+
+    <bean id="shoppingService" class="com.wbs.shopping.service.ShoppingService">
+        <property name="shoppingDao" ref="shoppingDao"/>
+    </bean>
+
 
     <!-- Dao配置 -->
     <bean id="customerDao" class="com.wbs.customer.dao.CustomerDao">
@@ -95,6 +101,10 @@
     </bean>
 
     <bean id="bookTypeDao" class="com.wbs.booktype.dao.BookTypeDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="shoppingDao" class="com.wbs.shopping.dao.ShoppingDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

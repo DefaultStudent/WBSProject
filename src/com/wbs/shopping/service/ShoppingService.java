@@ -1,5 +1,6 @@
 package com.wbs.shopping.service;
 
+import com.wbs.bookinfo.vo.BookInfo;
 import com.wbs.shopping.dao.ShoppingDao;
 
 /**
@@ -17,4 +18,14 @@ public class ShoppingService {
     public void setShoppingDao(ShoppingDao shoppingDao) {
         this.shoppingDao = shoppingDao;
     }
+
+    /**
+     *
+     * @param isbn
+     * @return
+     */
+    public BookInfo findByISBN (String isbn){
+        return shoppingDao.findById(isbn);
+    }
+
 }

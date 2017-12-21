@@ -90,7 +90,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="trolley.html">
+                            <a href="trolley.jsp">
                                 <i class="menu-icon icon-inbox"></i>
                                 购物车
                             </a>
@@ -173,12 +173,12 @@
                                 <s:iterator var="bookinfo" value="#session.bookinfo">
                                     <tbody>
                                         <tr>
-                                            <td></td>
+                                            <td><s:property value="#bookinfo.isbn"/></td>
                                             <td><s:property value="#bookinfo.bookname"/></td>
                                             <td><s:property value="#bookinfo.booktypename"/></td>
                                             <td><s:property value="#bookinfo.bookprice"/></td>
                                             <td><s:property value="#bookinfo.pubname"/></td>
-                                            <td><a href="#">添加至购物车</a> </td>
+                                            <td><s:a href="addCar?isbn=%{#bookinfo.isbn}">添加至购物车</s:a> </td>
                                         </tr>
                                     </tbody>
                                 </s:iterator>
