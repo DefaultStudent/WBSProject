@@ -57,10 +57,8 @@
         <property name="customerService" ref="customerService"/>
     </bean>
 
-    <!-- Dao配置 -->
-    <bean id="customerDao" class="com.wbs.customer.dao.CustomerDao">
-        <property name="sessionFactory" ref="sessionFactory">
-        </property>
+    <bean id="bookInfoAction" class="com.wbs.bookinfo.action.BookInfoAction">
+        <property name="bookInfoService" ref="bookInfoService"/>
     </bean>
 
     <!-- Service配置 -->
@@ -68,5 +66,17 @@
         <property name="customerDao" ref="customerDao"/>
     </bean>
 
+    <bean id="bookInfoService" class="com.wbs.bookinfo.service.BookInfoService">
+        <property name="bookInfoDao" ref="bookInfoDao"/>
+    </bean>
+
+    <!-- Dao配置 -->
+    <bean id="customerDao" class="com.wbs.customer.dao.CustomerDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="bookInfoDao" class="com.wbs.bookinfo.dao.BookInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>
