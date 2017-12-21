@@ -23,7 +23,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="sessionFactory" />
+          <unit-entry name="sessionFactory" value="ea0456cf-e68c-4f72-8cef-d769c2c09ef8" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>
@@ -53,5 +53,23 @@
     <orderEntry type="library" exported="" name="Hibernate 4.0.1-4.1.1" level="project" />
     <orderEntry type="library" exported="" name="Spring-4.3.13.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Struts 2-2.5.14.1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/apache-tomcat-7.0.82/lib/jsp-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/apache-tomcat-7.0.82/lib/servlet-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

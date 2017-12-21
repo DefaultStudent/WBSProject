@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html; UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -135,32 +137,18 @@
                                         <th>查看</th>
 									</tr>
 								  </thead>
-								  <tbody>
-                                    <tr>
-                                          <td>1</td>
-                                          <td>javascript实战</td>
-                                          <td>技术书籍</td>
-                                          <td>66.5</td>
-                                          <td>机械工业出版社</td>
-                                        <td><a href="#">查看</a> </td>
-									</tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>javascript实战</td>
-                                        <td>技术书籍</td>
-                                        <td>66.5</td>
-                                        <td>机械工业出版社</td>
-                                        <td><a href="#">查看</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>javascript实战</td>
-                                        <td>技术书籍</td>
-                                        <td>66.5</td>
-                                        <td>机械工业出版社</td>
-                                        <td><a href="#">查看</a> </td>
-                                    </tr>
-								  </tbody>
+									<s:iterator var="bookinfo" value="#session.bookinfo">
+									  <tbody>
+										<tr>
+											  <td></td>
+											  <td><s:property value="#bookinfo.bookname"/></td>
+											  <td><s:property value="#bookinfo.booktypename"/></td>
+											  <td><s:property value="#bookinfo.bookprice"/></td>
+											  <td><s:property value="#bookinfo.pubname"/></td>
+											<td><a href="#">查看</a> </td>
+										</tr>
+									  </tbody>
+									</s:iterator>
 								</table>
 								<br />
 								<!-- <hr /> -->

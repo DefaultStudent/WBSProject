@@ -8,11 +8,20 @@
     <constant name="struts.objectFactory" value="spring" />
     <package name="wbs" extends="struts-default">
         <action name="login" class="com.wbs.customer.action.CustomerAction" method="login">
-            <result>/table.jsp</result>
+            <result type="chain">findAllBook2</result>
             <result name="input">/register.jsp</result>
         </action>
         <action name="register" class="com.wbs.customer.action.CustomerAction" method="register">
+            <result>/table_after.jsp</result>
+        </action>
+        <action name="findAllBook" class="com.wbs.bookinfo.action.BookInfoAction" method="findAllBook">
             <result>/table.jsp</result>
+        </action>
+        <action name="findAllBook2" class="com.wbs.bookinfo.action.BookInfoAction" method="findAllBook">
+            <result>/table_after.jsp</result>
+        </action>
+        <action name="findAllType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
+            <result>/index.jsp</result>
         </action>
     </package>
 </struts>
