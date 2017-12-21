@@ -23,5 +23,8 @@
         <action name="findAllType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
             <result>/index.jsp</result>
         </action>
+        <action name="queryAllBookType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
+            <result>/table.jsp</result>
+        </action>
     </package>
 </struts>
