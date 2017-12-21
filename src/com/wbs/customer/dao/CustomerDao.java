@@ -27,7 +27,7 @@ public class CustomerDao extends HibernateDaoSupport{
         if (list != null && list.size() > 0) {
             return list.get(0);
         } else {
-            return nul;
+            return null;
         }
 
     }
