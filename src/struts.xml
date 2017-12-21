@@ -17,5 +17,9 @@
         <action name="findAllBook" class="com.wbs.bookinfo.action.BookInfoAction" method="findAllBook">
             <result>/table.jsp</result>
         </action>
+
+        <action name="findAllType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
+            <result>/index.jsp</result>
+        </action>
     </package>
 </struts>
