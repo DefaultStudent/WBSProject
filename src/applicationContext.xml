@@ -33,15 +33,13 @@
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.connection.autocommit">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://39.106.141.230:3306/WBS</prop>
-                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
         </property>
         <!-- 配置Hibernate的映射文件 -->
         <property name="mappingResources">
         <list>
             <value>com/wbs/customer/vo/Customers.hbm.xml</value>
-            <value>com/wbs/booktype/vo/BookType.hbm.xml</value>
+            <value>com/wbs/bookinfo/vo/BookInfo.hbm.xml</value>
         </list>
     </property>
     </bean>
@@ -59,10 +57,8 @@
         <property name="customerService" ref="customerService"/>
     </bean>
 
-    <!-- Dao配置 -->
-    <bean id="customerDao" class="com.wbs.customer.dao.CustomerDao">
-        <property name="sessionFactory" ref="sessionFactory">
-        </property>
+    <bean id="bookInfoAction" class="com.wbs.bookinfo.action.BookInfoAction">
+        <property name="bookInfoService" ref="bookInfoService"/>
     </bean>
 
     <!-- Service配置 -->
@@ -70,5 +66,17 @@
         <property name="customerDao" ref="customerDao"/>
     </bean>
 
+    <bean id="bookInfoService" class="com.wbs.bookinfo.service.BookInfoService">
+        <property name="bookInfoDao" ref="bookInfoDao"/>
+    </bean>
+
+    <!-- Dao配置 -->
+    <bean id="customerDao" class="com.wbs.customer.dao.CustomerDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="bookInfoDao" class="com.wbs.bookinfo.dao.BookInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>
