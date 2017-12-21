@@ -21,12 +21,12 @@
     <div class="login">
         <div class="login_nav">
             <div class="nav_slider">
-                <a href="#" class="signup focus">注册</a>
-                <a href="#" class="signin">登录</a>
+                <a href="#" class="signup">注册</a>
+                <a href="#" class="signin focus">登录</a>
             </div>
         </div>
             <form name="form2" action="register" method="post">
-                <div class="input_signup active">
+                <div class="input_signup">
                     <input class="input" id="cus_id" name="cusId" type="text" aria-label="用户帐号" placeholder="你的邮箱"/><br/>
                     <div class="hint">请填写符合格式的邮箱</div>
                     <input class="input" id="cus_alias" name="cusAlias" type="text" aria-label="用户昵称（包含字母/数字/下划线）" placeholder="用户昵称"/><br/>
@@ -50,7 +50,7 @@
                 </div>
             </form>
             <form method="post" action="login" name="form1">
-                <div class="input_signin">
+                <div class="input_signin active">
                     <input class="input" id="login_id" name="cusId" type="text" aria-label="用户帐号" placeholder="你的注册邮箱"/><br/>
                     <div class="hint">请填写你的注册帐号</div>
                     <input class="input" id="login_pwd" name="cusPwd" type="password" placeholder="密码"/><br/>
