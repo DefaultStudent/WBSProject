@@ -33,6 +33,8 @@
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.connection.autocommit">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://39.106.141.230:3306/WBS</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
         </property>
         <!-- 配置Hibernate的映射文件 -->
@@ -41,6 +43,7 @@
             <value>com/wbs/customer/vo/Customers.hbm.xml</value>
             <value>com/wbs/bookinfo/vo/BookInfo.hbm.xml</value>
             <value>com/wbs/booktype/vo/BookType.hbm.xml</value>
+            <value>com/wbs/Shopping/vo/Shopping.hbm.xml</value>
         </list>
     </property>
     </bean>
@@ -63,6 +66,7 @@
     </bean>
 
     <bean id="bookTypeAction" class="com.wbs.booktype.action.BookTypeAction">
+        <property name="bookTypeService" ref="bookTypeService"/>
         <property name="bookTypeService" ref="booktypeService"/>
     </bean>
 
@@ -75,6 +79,8 @@
         <property name="bookInfoDao" ref="bookInfoDao"/>
     </bean>
 
+    <bean id="bookTypeService" class="com.wbs.booktype.service.BookTypeService">
+        <property name="bookTypeDao" ref="bookTypeDao"/>
     <bean id="booktypeService" class="com.wbs.booktype.service.BookTypeService">
         <property name="bookTypeDao" ref="booktypeDao"/>
     </bean>
@@ -88,7 +94,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="booktypeDao" class="com.wbs.booktype.dao.BookTypeDao">
+    <bean id="bookTypeDao" class="com.wbs.booktype.dao.BookTypeDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

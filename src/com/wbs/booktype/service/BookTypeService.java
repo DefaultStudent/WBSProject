@@ -17,7 +17,6 @@ public class BookTypeService {
     }
 
     /**
-     *
      * @return
      */
     public List<BookType> selectAll(){

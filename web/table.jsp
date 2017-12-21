@@ -1,5 +1,7 @@
-﻿<%@ page contentType="text/html; UTF-8" language="java" %>
+
+<%@ page contentType="text/html; UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,6 +139,18 @@
                                         <th>查看</th>
 									</tr>
 								  </thead>
+								  <tbody>
+								  	<s:iterator var="books" value="#session.bookinfo">
+                                    	<tr>
+                                          	<td><s:property value="#books.bookname"/> </td>
+                                          	<td><s:property value="#books.bookprice"/></td>
+                                          	<td><s:property value="#books.author"/></td>
+                                          	<td><s:property value="#books.booktypename"/></td>
+                                          	<td><s:property value="#books.pubname"/></td>
+                                        	<td><a href="#">添加购物车</a> </td>
+										</tr>
+								  	</s:iterator>
+								  </tbody>
 									<s:iterator var="bookinfo" value="#session.bookinfo">
 									  <tbody>
 										<tr>

@@ -4,12 +4,20 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.wbs.booktype.service.BookTypeService;
 import com.wbs.booktype.vo.BookType;
-import org.apache.struts2.components.If;
+import org.apache.struts2.interceptor.SessionAware;
 
-public class BookTypeAction extends ActionSupport implements ModelDriven<BookType> {
+import java.util.*;
+
+public class BookTypeAction extends ActionSupport implements ModelDriven<BookType>,SessionAware {
 
     BookType bookType = new BookType();
     private BookTypeService bookTypeService;
+    private Map<String,Object> session;
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
 
     public BookTypeService getBookTypeService() {
         return bookTypeService;
@@ -30,7 +38,8 @@ public class BookTypeAction extends ActionSupport implements ModelDriven<BookTyp
 
 
     public String queryAll() throws Exception {
-        bookTypeService.selectAll();
+        List<BookType> list = bookTypeService.selectAll();
+        session.put("booktype",list);
         return SUCCESS;
     }
 }

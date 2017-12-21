@@ -4,6 +4,7 @@ import com.wbs.bookinfo.vo.BookInfo;
 
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 /**
