@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ page language="java" contentType="text/html; UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -168,16 +170,18 @@
                                     <th>添加</th>
                                 </tr>
                                 </thead>
+                                <s:iterator var="bookinfo" value="#session.bookinfo">
                                 <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>javascript实战</td>
-                                    <td>技术书籍</td>
-                                    <td>66.5</td>
-                                    <td>机械工业出版社</td>
+                                    <td></td>
+                                    <td><s:property value="#bookinfo.bookname"/></td>
+                                    <td><s:property value="#bookinfo.booktype"/></td>
+                                    <td><s:property value="#bookinfo.bookprice"/></td>
+                                    <td><s:property value="#bookinfo.pubname"/></td>
                                     <td><a href="#">添加至购物车</a> </td>
                                 </tr>
                                 </tbody>
+                                </s:iterator>
                             </table>
                             <br />
                             <!-- <hr /> -->

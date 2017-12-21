@@ -10,10 +10,10 @@
       <root url="jar://$PROJECT_DIR$/lib/javassist-3.15.0-GA.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-logging-3.1.0.GA.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../c3p0-0.9.5.2/lib/c3p0-oracle-thin-extras-0.9.5.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/c3p0-0.9.5.2/lib/c3p0-oracle-thin-extras-0.9.5.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
