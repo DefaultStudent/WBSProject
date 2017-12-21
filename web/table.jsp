@@ -52,20 +52,20 @@
 								</a>
 							</li>
 							<li>
-								<a href="activity.html">
+								<a href="activity.html" onclick="trolley()">
 									<i class="menu-icon icon-bullhorn"></i>
-									News Feed
+									个人中心
 								</a>
 							</li>
 							<li>
-								<a href="register.jsp">
+								<a href="trolley.html" onclick="trolley()">
 									<i class="menu-icon icon-inbox"></i>
 									购物车
 								</a>
 							</li>
 
 							<li>
-								<a href="task.html">
+								<a href="task.html"  onclick="trolley()">
 									<i class="menu-icon icon-tasks"></i>
 									订单管理
 								</a>
@@ -74,26 +74,26 @@
 
 						<ul class="widget widget-menu unstyled">
 							<li>
-								<a class="collapsed" data-toggle="collapse" href="#togglePages">
+								<a class="collapsed" data-toggle="collapse" href="#togglePages" onclick="trolley()">
 									<i class="menu-icon icon-cog"></i>
 									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
 									图书类别
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
 									<li>
-										<a href="other-login.html">
+										<a href="other-login.html" onclick="trolley()">
 											<i class="icon-inbox"></i>
 											科技类
 										</a>
 									</li>
 									<li>
-										<a href="other-user-profile.html">
+										<a href="other-user-profile.html" onclick="trolley()">
 											<i class="icon-inbox"></i>
 											技术书籍
 										</a>
 									</li>
 									<li>
-										<a href="other-user-listing.html">
+										<a href="other-user-listing.html" onclick="trolley()">
 											<i class="icon-inbox"></i>
 											小说
 										</a>
@@ -160,8 +160,6 @@
 
 	<div class="footer">
 		<div class="container">
-
-
 			<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b> All rights reserved.
 		</div>
 	</div>
@@ -178,5 +176,8 @@
 			$('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
 			$('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
 		} );
+		function trolley(){
+		window.alert("请先登录");
+		}
 	</script>
 </body>

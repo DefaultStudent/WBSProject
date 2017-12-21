@@ -1,6 +1,5 @@
 <component name="libraryTable">
-  <library name="Spring-4.3.13.RELEASE" type="spring">
-    <properties version="4.3.13.RELEASE" />
+  <library name="Spring-4.3.13.RELEASE">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.13.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.13.RELEASE.jar!/" />
@@ -23,7 +22,6 @@
       <root url="jar://$USER_HOME$/Downloads/spring-framework-4.3.13.RELEASE/libs/spring-web-4.3.13.RELEASE.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/commons-dbcp2-2.1.1/commons-dbcp2-2.1.1.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>
