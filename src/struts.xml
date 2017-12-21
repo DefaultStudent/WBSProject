@@ -16,7 +16,6 @@
         </action>
         <action name="findAllBook" class="com.wbs.bookinfo.action.BookInfoAction" method="findAllBook">
             <result>/table.jsp</result>
-            <result name="error">/404.html</result>
         </action>
     </package>
 </struts>

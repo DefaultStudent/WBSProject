@@ -24,11 +24,7 @@ public class BookInfoAction extends ActionSupport implements ModelDriven<BookInf
     }
 
     public String findAllBook() throws Exception{
-
-        if (bookInfoService.findAllBookInfo() == null) {
-            return ERROR;
-        } else {
-            return SUCCESS;
-        }
+        bookInfoService.findAllBookInfo();
+        return SUCCESS;
     }
 }
