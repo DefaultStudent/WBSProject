@@ -5,7 +5,10 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.wbs.bookinfo.service.BookInfoService;
 import com.wbs.bookinfo.vo.BookInfo;
 
-import java.util.List;
+/**
+ * @author Simon
+ * @version 1.0 2017-12-21
+ */
 
 public class BookInfoAction extends ActionSupport implements ModelDriven<BookInfo>{
     private BookInfo bookInfo = new BookInfo();
@@ -22,7 +25,7 @@ public class BookInfoAction extends ActionSupport implements ModelDriven<BookInf
 
     public String findAllBook() throws Exception{
 
-        if (bookInfoService.findAllBookInfo(bookInfo) == null) {
+        if (bookInfoService.findAllBookInfo() == null) {
             return ERROR;
         } else {
             return SUCCESS;

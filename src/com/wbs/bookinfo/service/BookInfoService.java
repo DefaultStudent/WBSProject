@@ -23,11 +23,10 @@ public class BookInfoService {
 
     /**
      *
-     * @param bookInfo
      * @return
      */
-    public List<BookInfo> findAllBookInfo(BookInfo bookInfo){
-        return bookInfoDao.findAllBookInfo(bookInfo);
+    public List<BookInfo> findAllBookInfo(){
+        return bookInfoDao.findAllBookInfo();
     }
 
 }
