@@ -59,7 +59,7 @@
                             <li><a href="#">修改个人信息</a></li>
                             <li><a href="#">设置</a></li>
                             <li class="divider"></li>
-                            <li><a href="">注销</a></li>
+                            <li><a href="register.jsp">注销</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -84,9 +84,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="activity.html">
+                            <a href="">
                                 <i class="menu-icon icon-bullhorn"></i>
-                                News Feed
+                                个人中心
                             </a>
                         </li>
                         <li>
@@ -97,7 +97,7 @@
                         </li>
 
                         <li>
-                            <a href="task.html">
+                            <a href="#">
                                 <i class="menu-icon icon-tasks"></i>
                                 订单管理
                             </a>
@@ -134,7 +134,7 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="register.jsp">
                                 <i class="menu-icon icon-signout"></i>
                                 注销
                             </a>
