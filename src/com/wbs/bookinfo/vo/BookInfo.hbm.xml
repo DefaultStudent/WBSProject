@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
     <class name="com.wbs.bookinfo.vo.BookInfo" table="BookInfo" schema="WBS">
-        <property name="bookname" column="bookname"/>
+        <id name="bookname" column="bookname"/>
         <property name="booktypename" column="booktypename"/>
         <property name="isbn" column="isbn"/>
         <property name="bookprice" column="bookprice"/>
