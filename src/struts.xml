@@ -27,9 +27,11 @@
         <action name="queryAllBookType" class="com.wbs.booktype.action.BookTypeAction" method="queryAll">
             <result>/table.jsp</result>
         </action>
-
         <action name="addCar" class="com.wbs.shopping.action.ShoppingAction" method="addCar">
             <result type="redirectAction">findAllBook2</result>
+        </action>
+        <action name="delCar" class="com.wbs.shopping.action.ShoppingAction" method="delCar">
+            <result>/trolley.jsp</result>
         </action>
     </package>
 </struts>

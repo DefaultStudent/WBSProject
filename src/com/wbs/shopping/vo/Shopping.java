@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class Shopping {
     private String sBookname;
-    private BigDecimal sBookprice;
+    private double sBookprice;
     private int total;
 
     public String getsBookname() {
@@ -20,11 +20,11 @@ public class Shopping {
         this.sBookname = sBookname;
     }
 
-    public BigDecimal getsBookprice() {
+    public double getsBookprice() {
         return sBookprice;
     }
 
-    public void setsBookprice(BigDecimal sBookprice) {
+    public void setsBookprice(double sBookprice) {
         this.sBookprice = sBookprice;
     }
 
