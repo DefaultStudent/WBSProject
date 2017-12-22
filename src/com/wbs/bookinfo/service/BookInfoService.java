@@ -21,12 +21,13 @@ public class BookInfoService {
         this.bookInfoDao = bookInfoDao;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public List<BookInfo> findAllBookInfo(){
         return bookInfoDao.findAllBookInfo();
+    }
+
+    public BookInfo findBookByName(String bookName){
+        return bookInfoDao.findBookByName(bookName);
     }
 
 }

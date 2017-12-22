@@ -43,7 +43,6 @@
             <value>com/wbs/customer/vo/Customers.hbm.xml</value>
             <value>com/wbs/bookinfo/vo/BookInfo.hbm.xml</value>
             <value>com/wbs/booktype/vo/BookType.hbm.xml</value>
-            <value>com/wbs/shopping/vo/Shopping.hbm.xml</value>
         </list>
     </property>
     </bean>
@@ -67,7 +66,6 @@
 
     <bean id="bookTypeAction" class="com.wbs.booktype.action.BookTypeAction">
         <property name="bookTypeService" ref="bookTypeService"/>
-        <property name="bookTypeService" ref="booktypeService"/>
     </bean>
 
     <!-- Service配置 -->
@@ -81,8 +79,6 @@
 
     <bean id="bookTypeService" class="com.wbs.booktype.service.BookTypeService">
         <property name="bookTypeDao" ref="bookTypeDao"/>
-    <bean id="booktypeService" class="com.wbs.booktype.service.BookTypeService">
-        <property name="bookTypeDao" ref="booktypeDao"/>
     </bean>
 
     <!-- Dao配置 -->

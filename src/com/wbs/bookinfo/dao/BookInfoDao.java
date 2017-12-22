@@ -8,14 +8,14 @@ import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 /**
- * @author Simon
+ * @author duke
  * @version 1.0 2017-12-21
  */
 
 public class BookInfoDao extends HibernateDaoSupport{
     /**
      *
-     * @return
+     * @return list
      */
     public List<BookInfo> findAllBookInfo(){
         String hql = "from BookInfo";
@@ -24,5 +24,16 @@ public class BookInfoDao extends HibernateDaoSupport{
             return list;
         }
         return null;
+    }
+
+    /**
+     *
+     * @param bookName
+     * @return bookInfo
+     */
+    public BookInfo findBookByName(String bookName){
+        String sql = "from BookInfo where bookname = ?";
+        List<BookInfo> bookInfo = (List<BookInfo>) this.getHibernateTemplate().find(sql, bookName);
+        return bookInfo.get(0);
     }
 }

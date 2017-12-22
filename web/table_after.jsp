@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; UTF-8" %>
+﻿<%@ page language="java" contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +11,12 @@
     <link type="text/css" href="css/theme.css" rel="stylesheet">
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+    <script type="text/javascript">
+        function findBook() {
+            var bookName = document.myform.mytext.value;
+            location.href=""
+        }
+    </script>
 </head>
 <body>
 <!--顶部导航栏-->
@@ -26,9 +32,9 @@
             </a>
 
             <div class="nav-collapse collapse navbar-inverse-collapse">
-                <form class="navbar-search pull-left input-append" action="#">
-                    <input type="text" class="span3" placeholder="搜索想要的图书">
-                    <button class="btn" type="button">
+                <form name="myform" class="navbar-search pull-left input-append" action="finBookByName">
+                    <input type="text" name="mytext" class="span3" placeholder="搜索想要的图书">
+                    <button class="btn" type="button" onclick="findBook()" >
                         <i class="icon-search"></i>
                     </button>
                 </form>
@@ -170,18 +176,16 @@
                                     <th>添加</th>
                                 </tr>
                                 </thead>
-                                <s:iterator var="bookinfo" value="#session.bookinfo">
                                     <tbody>
                                         <tr>
-                                            <td></td>
-                                            <td><s:property value="#bookinfo.bookname"/></td>
-                                            <td><s:property value="#bookinfo.booktypename"/></td>
-                                            <td><s:property value="#bookinfo.bookprice"/></td>
-                                            <td><s:property value="#bookinfo.pubname"/></td>
+                                            <td><s:property value="#session.isbn"/></td>
+                                            <td><s:property value="#session.bookname"/></td>
+                                            <td><s:property value="#session.booktypename"/></td>
+                                            <td><s:property value="#session.bookprice"/></td>
+                                            <td><s:property value="#session.pubname"/></td>
                                             <td><a href="#">添加至购物车</a> </td>
                                         </tr>
                                     </tbody>
-                                </s:iterator>
                             </table>
                             <br />
                             <!-- <hr /> -->
@@ -200,6 +204,7 @@
             </div>
         </div>
 
+    </div>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery-ui-1.10.1.custom.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -213,4 +218,6 @@
                 $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
             } );
         </script>
+    </div>
 </body>
+</html>
