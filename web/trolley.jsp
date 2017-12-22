@@ -1,6 +1,7 @@
 <%@ page import="com.wbs.bookinfo.vo.BookInfo" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Iterator" %><%--
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.math.BigDecimal" %><%--
   Created by IntelliJ IDEA.
   User: vodka
   Date: 2017/12/21
@@ -178,13 +179,14 @@
                     <div class="order_content">
                         <ul class="order_lists">
                             <%
+                                double total = 0;
                                 if(session.getAttribute("shop")!=null){
                                     List<BookInfo> list=(List<BookInfo>)session.getAttribute("shop");
                                     Iterator<BookInfo> it=list.iterator();
-                                    int i=1;
+                                    int i =1;
                                     while(it.hasNext()){
                                         BookInfo bookInfo= it.next();
-
+                                        total += bookInfo.getBookprice();
 
                             %>
                             <li class="list_chk">
@@ -210,7 +212,7 @@
                             </li>
 
                             <li class="list_sum"><!--总金额-->
-                                <p class="sum_price"><%=bookInfo.getBookprice()%></p>
+                                <p class="sum_price"><%=total%></p>
                             </li>
                             <%
                                         i++;}
@@ -240,8 +242,11 @@
         <section class="my_model">
             <p class="title">删除宝贝<span class="closeModel">X</span></p>
             <p>您确认要删除该宝贝吗？</p>
-            <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
+            <s:iterator var="shop" value="#session.shop">
+            <div class="opBtn"><s:a href="javascript:;delCar?isbn=%{#shop.isbn}" class="dialog-sure">确定</s:a><a href="javascript:;" class="dialog-close">关闭</a></div>
+            </s:iterator>
         </section>
+    </div>
         <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
         <script src="js/carts.js"></script><!--购物车js -->
 
@@ -259,5 +264,6 @@
                 $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
             } );
         </script>
+</div>
 </body>
 </html>

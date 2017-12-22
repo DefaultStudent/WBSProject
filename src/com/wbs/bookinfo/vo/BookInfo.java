@@ -4,12 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Objects;
+
+/**
+ * @author Simon
+ * @version 1.0 2017-12-21
+ */
+
 @Entity
 public class BookInfo {
     private String bookname;
     private String booktypename;
     private String isbn;
-    private BigDecimal bookprice;
+    private double bookprice;
     private String pubname;
     private String pubdate;
     private String author;
@@ -31,7 +37,6 @@ public class BookInfo {
         this.booktypename = booktypename;
     }
 
-    @Id
     public String getIsbn() {
         return isbn;
     }
@@ -40,11 +45,11 @@ public class BookInfo {
         this.isbn = isbn;
     }
 
-    public BigDecimal getBookprice() {
+    public double getBookprice() {
         return bookprice;
     }
 
-    public void setBookprice(BigDecimal bookprice) {
+    public void setBookprice(double bookprice) {
         this.bookprice = bookprice;
     }
 

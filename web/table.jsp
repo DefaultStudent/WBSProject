@@ -37,7 +37,7 @@
                 </form>
                 <ul class="nav pull-right">
                     <li><a href="register.jsp">
-                        登录注册
+                        登录|注册
                     </a></li>
                 </ul>
             </div><!-- /.nav-collapse -->

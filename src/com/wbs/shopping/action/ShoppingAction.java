@@ -11,6 +11,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +43,10 @@ public class ShoppingAction extends ActionSupport implements ModelDriven<Shoppin
         this.shoppingService = shoppingService;
     }
 
+    /**
+     * 添加至购物车
+     * @return
+     */
     public String addCar(){
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
@@ -54,6 +59,22 @@ public class ShoppingAction extends ActionSupport implements ModelDriven<Shoppin
             list = (List<BookInfo>)session.getAttribute("shop");
         }
         list.add(bookInfo);
+        session.setAttribute("shop", list);
+        return SUCCESS;
+    }
+
+    public String delCar(){
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        List<BookInfo> list = (List<BookInfo>)session.getAttribute("shop");
+        String isbn = request.getParameter("isbn");
+        Iterator<BookInfo> it = list.iterator();
+        while (it.hasNext()){
+            BookInfo bookInfo1 = it.next();
+            if (bookInfo1.getIsbn() == isbn){
+                it.remove();
+            }
+        }
         session.setAttribute("shop", list);
         return SUCCESS;
     }

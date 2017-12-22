@@ -11,6 +11,7 @@ import java.util.List;
  * @version 2017-12-21
  */
 public class BookTypeDao extends HibernateDaoSupport{
+
     /**
      * 查询全部图书类型
      * @return list
@@ -20,8 +21,4 @@ public class BookTypeDao extends HibernateDaoSupport{
         List<BookType> list = (List<BookType>)this.getHibernateTemplate().find(sql);
         return list;
     }
-
-    /**
-     *
-     */
 }

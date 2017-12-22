@@ -11,6 +11,11 @@ import java.util.List;
  */
 public class ShoppingDao extends HibernateDaoSupport {
 
+    /**
+     * 根据isbn查询图书信息
+     * @param isbn
+     * @return
+     */
     public BookInfo findById(String isbn) {
         List<BookInfo> list = (List<BookInfo>) this.getHibernateTemplate().
                 find("from BookInfo where isbn = ?", isbn);
